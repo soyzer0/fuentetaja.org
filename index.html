@@ -1,57 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- @Author: Kwaku Amoh-Aboagye 
-@Github: ket-c
--->
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Próximamente - Fuentetaja.org</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/comingsoon.css">
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <style>
+        body { margin: 0; padding: 0; }
+        html { height: 100%; cursor: default; }
+        body {
+            font-family: "Roboto", sans-serif; /* Default font */
+            width: 100%; height: 100%;
+            text-align: center;
+            display: table;
+            opacity: 1;
+            animation: fadein 3s forwards;
+        }
+        h2 {
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+        img {
+            width: 25%; /* Image width */
+            border: 0; /* For IE */
+            /* Aspect ratio of image, gives initial dimension to prevent text moving down once image is loaded */
+            /* When changing logo, change this also */
+            aspect-ratio: 125 / 50;
+        }
+        #main {
+            vertical-align: middle;
+            display: table-cell;
+        }
+        /* Progress bar */
+        #progress {
+            width: 45%; /* Bar width */
+            margin: 0 auto;
+            border-radius: 10px; /* Roundness */
+            background-color: #a8a8a8; /* Background colour */
+            padding: 7px 5px;
+            /* border: 5px solid #a8a8a8; Border */
+        }
+        #fill {
+            padding: 2px 0;
+            background-color: #00b98b; /* Fill colour */
+            width: 35%; /* Bar percentage, change text below also */
+            border-radius: 25px; /* Roundness */
+            animation: proanimate 2s;
+        }
+        #barpercent h3 {
+            color: white; /* Bar percentage text colour */
+            margin: 0; padding: 0;
+            opacity: 1;
+            animation: fadein 3s forwards;
+        }
+
+        /* Fades in animation */
+        @keyframes fadein  {
+            from { opacity: 0; }
+        }
+        /* Animates bar on page load */
+        @keyframes proanimate {
+            from { width: 0%; }
+        }
+
+        @media screen and (max-width:600px) {
+            img {
+                width: 60%;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            h2 {
+                margin: 1.1em;
+                font-size: 1.1em;
+            }
+            #progress {
+                width: 80%; /* Bar width */
+            }
+        }
+    </style>
+    <title>Coming Soon</title>
 </head>
-
-
-<body class="bg-warning d-flex justify-content-center align-items-center vh-100">
-    <section>
-        <h1 class="text-center text-dark align-middle " style="font-size: 100px">¡Pronto!</h1>
-
-        <div class="d-flex justify-content-center">
-            <!-- change width for your preference based on the image size -->
-            <img width="35%" src="assets/img/image.svg" alt="">
-        </div>
-        <div class="d-flex justify-content-center text-center">
-            <div class="grid p-2">
-                <p>días</p><b class="day"></b>
-            </div>
-            <div class="grid p-2">
-                <p>horas</p><b class="hour"></b>
-            </div>
-            <div class="grid p-2">
-                <p>minutos</p><b class="minutes"></b>
-            </div>
-            <div class="grid p-2">
-                <p>segundos</p><b class="seconds"></b>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <code class="bg-white p-1">La página está en desarrollo...</code>
-        </div>
-        <div class="text-center mt-5">
-            <p class="m-0"> fuentetaja.org</p>
-        </div>
-
-    </section>
-
-    <img src="" alt="">
-
-    <!-- Boostrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <!-- Coming Soon JS with timer-->
-    <script src="assets/js/comingsoon.js">
-    </script>
+<body>
+    <div id="main">
+        <img src="logo.png" alt="Logo Image">
+        <h1>Company Name</h1>
+        <h2>Our website is currently under construction. </h2>
+        <div id="progress"><div id="fill"><div id="barpercent"><h3>35%</h3></div></div></div>
+    </div>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </body>
-
 </html>
